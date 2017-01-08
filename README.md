@@ -15,4 +15,4 @@ After that you just run
     mvn docker:start
 
 to start the image. 
-The application should then be reachable at `http://<DOCKER_HOST>:8080/pagination-webapp`.
+The application should then be reachable at `http://<DOCKER_HOST>:8080/pagination-demo`.

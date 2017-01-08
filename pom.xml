@@ -119,7 +119,7 @@
                                 </ports>
                                 <wait>
                                     <http>
-                                        <url>http://${docker.host.address}:8080/pagination-webapp</url>
+                                        <url>http://${docker.host.address}:8080/pagination-demo</url>
                                     </http>
                                     <time>30000</time>
                                 </wait>
