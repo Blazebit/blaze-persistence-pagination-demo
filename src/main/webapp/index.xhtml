@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<f:view>
+    <h:head/>
+
+    <h:body>
+        <h1>Blaze-Persistence Pagination Demo</h1>
+        <p>Press enter to apply filters.</p>
+        <h:form>
+            <p:dataTable lazy="true" value="#{catDataModel}" var="cat"
+                         paginator="true" first="0" rows="10" paginatorPosition="top"
+                         paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                         rowsPerPageTemplate="10,25,50,100"
+                         filterEvent="enter"
+                         disabledSelection="true">
+                <p:column headerText="Name" filterBy="#{cat.name}" filterMatchMode="contains" filterable="true">
+                    <h:outputText value="#{cat.name}"/>
+                </p:column>
+                <p:column headerText="Age" sortBy="#{cat.age}">
+                    <h:outputText value="#{cat.age}"/>
+                </p:column>
+                <p:column headerText="Parent Name" filterBy="#{cat.parentName}" filterMatchMode="contains">
+                    <h:outputText value="#{cat.parentName}"/>
+                </p:column>
+                <p:column headerText="Children" sortBy="#{cat.numChildren}">
+                    <h:outputText value="#{cat.numChildren}"/>
+                </p:column>
+            </p:dataTable>
+        </h:form>
+    </h:body>
+</f:view>
+</html>
