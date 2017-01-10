@@ -50,7 +50,6 @@ public class CatDataModel extends AbstractLazyDataModel<CatTableRowView> {
 	protected PagedList<CatTableRowView> getEntityData(EntityViewSetting<CatTableRowView, PaginatedCriteriaBuilder<CatTableRowView>> setting) {
 		return evm.applySetting(setting, cbf.create(em, Cat.class))
 				.orderByAsc("id")
-				.withKeysetExtraction(true)
 				.getResultList();
 	}
 }

@@ -116,9 +116,7 @@ public abstract class AbstractLazyDataModel<T extends IdHolderView<?>> extends L
 	protected EntityViewSetting<T, PaginatedCriteriaBuilder<T>> createSettings(Class<T> modelClass, int startRow, int rowsPerPage, List<SortMeta> multiSortMeta, Map<String, Object> filterMap) {
 		EntityViewSetting<T, PaginatedCriteriaBuilder<T>> setting = EntityViewSetting.create(modelClass, startRow, rowsPerPage);
 
-		if (startRow > 0) {
-			setting.withKeysetPage(keysetPage);
-		}
+		setting.withKeysetPage(keysetPage);
 
 		applyFilters(setting, filterMap);
 
