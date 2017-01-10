@@ -41,8 +41,8 @@ public abstract class AbstractLazyDataModel<T extends IdHolderView<?>> extends L
 	private KeysetPage keysetPage;
 
 	// Request caching
-	private PagedList<T> entityData;
-	private Object requestContext;
+	private transient PagedList<T> entityData;
+	private transient Object requestContext;
 
 	private List<SortMeta> oldSortMeta = Collections.emptyList();
 
