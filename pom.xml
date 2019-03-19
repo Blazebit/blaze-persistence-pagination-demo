@@ -12,7 +12,7 @@
     <properties>
         <version.javaee>7.0</version.javaee>
         <version.primefaces>6.0</version.primefaces>
-        <version.blaze-persistence>1.2.0-SNAPSHOT</version.blaze-persistence>
+        <version.blaze-persistence>1.3.2</version.blaze-persistence>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -33,44 +33,45 @@
         <dependency>
             <groupId>com.blazebit</groupId>
             <artifactId>blaze-persistence-entity-view-api</artifactId>
-            <version>${version.blaze-persistence}</version>
         </dependency>
         <dependency>
             <groupId>com.blazebit</groupId>
             <artifactId>blaze-persistence-entity-view-impl</artifactId>
-            <version>${version.blaze-persistence}</version>
-            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>com.blazebit</groupId>
             <artifactId>blaze-persistence-core-api</artifactId>
-            <version>${version.blaze-persistence}</version>
         </dependency>
         <dependency>
             <groupId>com.blazebit</groupId>
             <artifactId>blaze-persistence-core-impl</artifactId>
-            <version>${version.blaze-persistence}</version>
-            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>com.blazebit</groupId>
             <artifactId>blaze-persistence-integration-entity-view-cdi</artifactId>
-            <version>${version.blaze-persistence}</version>
-            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>com.blazebit</groupId>
             <artifactId>blaze-persistence-integration-hibernate-5</artifactId>
-            <version>${version.blaze-persistence}</version>
-            <scope>runtime</scope>
         </dependency>
 
         <dependency>
             <groupId>com.blazebit</groupId>
             <artifactId>blaze-common-utils</artifactId>
-            <version>0.1.14</version>
         </dependency>
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.blazebit</groupId>
+                <artifactId>blaze-persistence-bom</artifactId>
+                <version>${version.blaze-persistence}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>
